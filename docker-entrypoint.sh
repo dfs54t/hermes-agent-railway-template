@@ -21,5 +21,11 @@ export HERMES_DASHBOARD_PORT="${HERMES_DASHBOARD_PORT:-${PORT:-8080}}"
 export HERMES_DASHBOARD_BASIC_AUTH_USERNAME="$dashboard_username"
 export HERMES_DASHBOARD_BASIC_AUTH_PASSWORD="$dashboard_password"
 export HERMES_DASHBOARD_BASIC_AUTH_SECRET="$dashboard_secret"
-
+mkdir -p ~/.hermes
+cat << 'EOF' > ~/.hermes/config.json
+{
+  "model": "cognitivecomputations/dolphin-mistral-24b-venice-edition:free",
+  "provider": "openrouter"
+}
+EOF
 exec /opt/hermes/docker/entrypoint-dispatch.sh "$@"
