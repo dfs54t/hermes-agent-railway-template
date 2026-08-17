@@ -11,6 +11,7 @@ services:
       ADMIN_USERNAME: ${ADMIN_USERNAME:-admin}
       ADMIN_PASSWORD: ${ADMIN_PASSWORD:-change-me}
       HERMES_DASHBOARD_BASIC_AUTH_SECRET: ${HERMES_DASHBOARD_BASIC_AUTH_SECRET:-}
+      - MODEL_NAME=cognitivecomputations/dolphin-mistral-24b-venice-edition:free
     volumes:
       - ./data:/data
     healthcheck:
