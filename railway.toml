@@ -3,7 +3,7 @@ builder = "DOCKERFILE"
 dockerfilePath = "Dockerfile"
 
 [deploy]
-startCommand = "/usr/local/bin/hermes-railway-entrypoint gateway run"
+startCommand = "/usr/local/bin/hermes-railway-entrypoint gateway run --model cognitivecomputations/dolphin-mistral-24b-venice-edition:free"
 healthcheckPath = "/api/status"
 restartPolicyType = "ON_FAILURE"
 restartPolicyMaxRetries = 10
